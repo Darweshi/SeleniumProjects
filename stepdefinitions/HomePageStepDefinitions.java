@@ -2,7 +2,6 @@ package stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import com.seleniumProject.FunctionalTest;
 import com.seleniumProject.HomePage;
 
 import io.cucumber.java.en.Given;
@@ -11,7 +10,7 @@ import io.cucumber.java.en.When;
 
 public class HomePageStepDefinitions {
 	WebDriver driver;
-/*
+
 	@Given("^the user is on home page$")
 	public void the_user_is_on_home_page() throws Throwable {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Weshi\\Desktop\\java\\chromedriver.exe");
@@ -89,30 +88,29 @@ public class HomePageStepDefinitions {
 	public void the_user_is_redirected_to_respective_cart() throws Throwable {
 		driver.close();
 	}
-	
-	 @Given("^User chooses item from home page$")
-	    public void user_chooses_item_from_home_page() throws Throwable {
-		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Weshi\\Desktop\\java\\chromedriver.exe");
-			driver = new ChromeDriver();
-			driver.get("http://automationpractice.com/index.php");
-	    }
 
-	    @When("^user clicks button add to cart$")
-	    public void user_clicks_button_add_to_cart() throws Throwable {
-	    	HomePage homePage = new HomePage(driver);
-	    	homePage.clickItem();
-	    }
+	@Given("^User chooses item from home page$")
+	public void user_chooses_item_from_home_page() throws Throwable {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Weshi\\Desktop\\java\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("http://automationpractice.com/index.php");
+	}
 
-	    @Then("^the user checks cart$")
-	    public void the_user_checks_cart() throws Throwable {
-	    	HomePage homePage = new HomePage(driver);
-	    	homePage.checkCart();
-	    }
+	@When("^user clicks button add to cart$")
+	public void user_clicks_button_add_to_cart() throws Throwable {
+		HomePage homePage = new HomePage(driver);
+		homePage.clickItems();
+	}
 
-	    @Then("^the item is in users cart$")
-	    public void the_item_is_in_users_cart() throws Throwable {
-	    	driver.close();
-	    }
-	*/
+	@Then("^the user checks cart$")
+	public void the_user_checks_cart() throws Throwable {
+		HomePage homePage = new HomePage(driver);
+		homePage.checkCart();
+	}
+
+	@Then("^the item is in users cart$")
+	public void the_item_is_in_users_cart() throws Throwable {
+		driver.close();
+	}
 	
 }
