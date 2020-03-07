@@ -31,9 +31,11 @@ public class HomePage extends PageObject {
 	@FindBy(partialLinkText = "cart")
 	private List<WebElement> items;
 	
-	@FindBy(partialLinkText = "id")
+	@FindBy(linkText = "")
 	private List<WebElement> showMore;
 	
+	@FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a")
+	private WebElement proceedToCheckout;
 	public void search (String searchBox) {
 		this.searchBox.click();
 		this.searchBox.clear();
@@ -51,7 +53,10 @@ public class HomePage extends PageObject {
 	public void checkCart() {
 		this.cart.click();
 	}
-	public void clickItem() {
+	public void addItem() {
+		items.get(2).click();
+	}
+	public void clickItems() {
 		for(int i = 0; i < items.size(); i++){
 			items.get(i).click();
 		}
@@ -59,4 +64,9 @@ public class HomePage extends PageObject {
 	public void show() {
 		showMore.get(1).click();
 	}
+	public OrderPage checkout() {
+		this.proceedToCheckout.click();
+		return new OrderPage(driver);
+	}
+		
 }
