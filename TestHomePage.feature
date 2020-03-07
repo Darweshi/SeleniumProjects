@@ -1,4 +1,4 @@
-@test
+#@test
 Feature: Test home page functionality
 
 Scenario: Utilize search bar
