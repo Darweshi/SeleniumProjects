@@ -24,6 +24,10 @@ public class PracticeTests {
 			signInPage.signInEmail();
 			signInPage.signInPasswd();
 			AddressPage addressPage =signInPage.addressPage();
+			ShippingPage shippingPage = addressPage.proceedToCheckout();
+			PaymentPage paymentPage = shippingPage.checkout();
+			PaymentSubPage paymentSubPage =paymentPage.pay();
+			paymentSubPage.confirm();
 			
 		}
 

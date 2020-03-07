@@ -5,18 +5,18 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-public class AddressPage extends PageObject {
+public class PaymentSubPage extends PageObject {
 
-	public AddressPage(WebDriver driver) {
+	public PaymentSubPage(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(xpath = "//*[@id=\"center_column\"]/form/p/button")
+
+	@FindBy(xpath = "//*[@id=\"cart_navigation\"]/button")
 	private WebElement proceed;
 	
-	public ShippingPage proceedToCheckout() {
+	public void confirm() {
 		this.proceed.click();
-		return new ShippingPage(driver);
 	}
 }
